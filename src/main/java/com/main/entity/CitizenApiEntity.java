@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class CitizenAppEntity 
+public class CitizenApiEntity 
 {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

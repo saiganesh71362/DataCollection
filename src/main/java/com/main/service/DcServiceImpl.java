@@ -17,13 +17,13 @@ import com.main.binding.IncomeBinding;
 import com.main.binding.PlanSelectionBinding;
 import com.main.binding.Summary;
 import com.main.entity.ChildrenEntity;
-import com.main.entity.CitizenAppEntity;
+import com.main.entity.CitizenApiEntity;
 import com.main.entity.DcCaseEntity;
 import com.main.entity.EducationEntity;
 import com.main.entity.IncomeEntity;
 import com.main.entity.PlanEntity;
 import com.main.repository.ChildrenRepository;
-import com.main.repository.CitizenAppRepository;
+import com.main.repository.CitizenApiRepository;
 import com.main.repository.DcCaseRepository;
 import com.main.repository.EducationRepository;
 import com.main.repository.IncomeRepository;
@@ -32,7 +32,7 @@ import com.main.repository.PlanRepository;
 @Service
 public class DcServiceImpl implements DcService{
 	@Autowired
-	private CitizenAppRepository citizenAppRepo;
+	private CitizenApiRepository citizenApiRepo;
 
 	@Autowired
 	private DcCaseRepository caseRepo;
@@ -51,7 +51,7 @@ public class DcServiceImpl implements DcService{
 
 	@Override
 	public Long loadCaseNum(Integer appId) {
-		Optional<CitizenAppEntity> findById = citizenAppRepo.findById(appId);
+		Optional<CitizenApiEntity> findById = citizenApiRepo.findById(appId);
 
 		if (findById.isPresent()) {
 			DcCaseEntity entity = new DcCaseEntity();
@@ -156,7 +156,7 @@ public class DcServiceImpl implements DcService{
 			childs.add(childBinding);
 		}
 		
-		summary.setChildrens(childs);
+		summary.setChildren(childs);
 		return summary;
 	}
 

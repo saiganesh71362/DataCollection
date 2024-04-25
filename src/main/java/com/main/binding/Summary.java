@@ -11,9 +11,8 @@ public class Summary
 	
 	private EducationBinding education;
 	
-	private List<ChildBinding> childrens;
+	private List<ChildBinding> children;
 	
 	private String planName; 
-
 
 }
